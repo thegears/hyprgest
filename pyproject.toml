@@ -1,0 +1,30 @@
+[project]
+name = "hyprgest"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "thegears", email = "semh.1362@gmail.com" }]
+requires-python = ">=3.14"
+dependencies = [
+    "mediapipe>=1.2.3",
+    "opencv-python>=5.0.0.93",
+]
+
+[project.scripts]
+hyprgest = "hyprgest:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "ANN"]
+
+[tool.ruff.lint.flake8-annotations]
+mypy-init-return = true
+suppress-dummy-args = true
+
+[tool.ty.rules]
+unresolved-reference = "error"
+invalid-argument-type = "error"
+invalid-return-type = "error"
