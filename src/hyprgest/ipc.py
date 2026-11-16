@@ -22,5 +22,4 @@ def send_command(command: str) -> str:
 
 def execute_gesture(gesture: Gesture) -> None:
     if command := COMMANDS.get(gesture):
-        result = send_command(command)
-        print(result)
+        send_command(command)
